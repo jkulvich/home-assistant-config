@@ -18,15 +18,15 @@ if [ ! -f ./nginx/ssl/cert.pem ] || [ ! -f ./nginx/ssl/key.pem ]; then
     chmod 600 ./nginx/ssl/key.pem ./nginx/ssl/cert.pem
 fi
 
-# Check is dhparam doesn't exists
-if [ ! -f ./nginx/ssl/dhparam.pem ]; then
-    echo "dhparam doesn't exists, generating..."
+# Check is dhparams doesn't exists
+if [ ! -f ./nginx/ssl/dhparams.pem ]; then
+    echo "dhparams doesn't exists, generating..."
     # Check for OpenSSL installation
     if ! [ -x "$(command -v openssl)" ]; then
         echo 'Error: OpenSSL is not installed.' >&2
         exit 1
     fi
-    openssl dhparam -out ./nginx/ssl/dhparam.pem 2048
+    openssl dhparam -out ./nginx/ssl/dhparams.pem 2048
 fi
 
 # Check for Docker installation
