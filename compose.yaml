@@ -2,7 +2,7 @@ services:
 
   # Home Assistant config, see: https://www.home-assistant.io/installation/linux/#platform-installation
   homeassistant:
-    image: ghcr.io/home-assistant/home-assistant:stable
+    build: ./home-assistant.dockerfile
     container_name: home-assistant
     privileged: true
     restart: unless-stopped
