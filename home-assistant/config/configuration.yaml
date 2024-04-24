@@ -21,7 +21,8 @@ frontend:
 http:
   use_x_forwarded_for: true
   trusted_proxies:
-    - 172.19.0.0/8
+    - 172.19.0.2
+    - 172.19.0.3
     - 127.0.0.1
     - 172.0.0.0/24
     - 192.168.0.0/16
