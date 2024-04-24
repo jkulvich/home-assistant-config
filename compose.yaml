@@ -3,7 +3,7 @@ services:
   # Home Assistant config, see: https://www.home-assistant.io/installation/linux/#platform-installation
   homeassistant:
     build: 
-      context: homeassistant
+      context: home-assistant
       dockerfile: ./home-assistant.dockerfile
     container_name: home-assistant
     privileged: true
