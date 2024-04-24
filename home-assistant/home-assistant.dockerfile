@@ -6,9 +6,15 @@
 
 FROM ghcr.io/home-assistant/home-assistant:stable
 RUN echo '' > '/config/.HA_VERSION'
-RUN bash -c 'declare -r haPath=/config; wget -O - https://get.hacs.xyz | bash -'
+RUN wget -O - https://get.hacs.xyz | bash -
 WORKDIR /config
 ENTRYPOINT [ "/init" ]
+
+# FROM ghcr.io/home-assistant/home-assistant:stable
+# RUN echo '' > '/config/.HA_VERSION'
+# RUN bash -c 'declare -r haPath=/config; wget -O - https://get.hacs.xyz | bash -'
+# WORKDIR /config
+# ENTRYPOINT [ "/init" ]
 
 # FROM ghcr.io/home-assistant/home-assistant:stable
 # WORKDIR /config
