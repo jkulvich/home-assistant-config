@@ -1,6 +1,12 @@
+# FROM ghcr.io/home-assistant/home-assistant:stable
+# WORKDIR /
+# RUN wget -O - https://get.hacs.xyz | bash -
+# WORKDIR /config
+# ENTRYPOINT [ "/init" ]
+
 FROM ghcr.io/home-assistant/home-assistant:stable
+RUN bash -c 'declare -r haPath=/config; wget -O - https://get.hacs.xyz | bash -'
 WORKDIR /config
-RUN wget -O - https://get.hacs.xyz | bash -
 ENTRYPOINT [ "/init" ]
 
 # FROM ghcr.io/home-assistant/home-assistant:stable
