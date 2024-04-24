@@ -5,8 +5,7 @@
 # ENTRYPOINT [ "/init" ]
 
 FROM ghcr.io/home-assistant/home-assistant:stable
-RUN echo '' > '/config/.HA_VERSION'
-RUN wget -O - https://get.hacs.xyz | bash -
+RUN echo '' > '/config/.HA_VERSION' && wget -O - https://get.hacs.xyz | bash -
 WORKDIR /config
 ENTRYPOINT [ "/init" ]
 
