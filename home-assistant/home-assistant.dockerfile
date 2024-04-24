@@ -4,10 +4,10 @@
 # WORKDIR /config
 # ENTRYPOINT [ "/init" ]
 
-FROM ghcr.io/home-assistant/home-assistant:stable
-WORKDIR /config
-RUN echo '0000.0.0000000000000' > '/config/.HA_VERSION' && wget -O - https://get.hacs.xyz | bash -
-ENTRYPOINT [ "/init" ]
+# FROM ghcr.io/home-assistant/home-assistant:stable
+# WORKDIR /config
+# RUN echo '0000.0.0000000000000' > '/config/.HA_VERSION' && wget -O - https://get.hacs.xyz | bash -
+# ENTRYPOINT [ "/init" ]
 
 # FROM ghcr.io/home-assistant/home-assistant:stable
 # RUN echo '' > '/config/.HA_VERSION'
