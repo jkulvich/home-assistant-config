@@ -1,5 +1,11 @@
 FROM ghcr.io/home-assistant/home-assistant:stable
 WORKDIR /config
-RUN wget -O - https://get.hacs.xyz | bash -
-# CMD wget -O - https://get.hacs.xyz | bash - && /init
+# RUN wget -O - https://get.hacs.xyz | bash -
+# Install HACS
+RUN wget "https://github.com/hacs/integration/releases/latest/download/hacs.zip" -O /config/custom_components/hacs.zip
+RUN unzip /config/custom_components/hacs.zip -d /config/custom_components
 ENTRYPOINT [ "/init" ]
+
+# FROM ghcr.io/home-assistant/home-assistant:stable
+# WORKDIR /config
+# CMD wget -O - https://get.hacs.xyz | bash - && /init
