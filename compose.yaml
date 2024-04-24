@@ -20,16 +20,11 @@ services:
     restart: unless-stopped
     networks:
       - private
-      - external
+      - host
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
     ports:
       - 80:80
 networks:
-  external:
-    name: external
-    driver: bridge
-    external: true
   private:
-    name: private
-    driver: overlay
+  
