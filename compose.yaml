@@ -12,12 +12,11 @@ services:
       - ./home-assistant/config:/config
       - /run/dbus:/run/dbus:ro
     ports:
-      # - '127.0.0.1:8123:8123'
-      - '8123:8123'
+      - '127.0.0.1:8123:8123'
 
   # NGINX
   nginx:
-    image: nginx:alpine
+    image: nginx:1.26.0-alpine
     container_name: nginx
     restart: unless-stopped
     volumes:
