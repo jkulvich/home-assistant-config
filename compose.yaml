@@ -1,4 +1,3 @@
-version: '3'
 services:
 
   # Home Assistant config, see: https://www.home-assistant.io/installation/linux/#platform-installation
@@ -15,8 +14,6 @@ services:
     ports:
       # - '127.0.0.1:8123:8123'
       - '80:8123'
-    depends_on:
-      - nginx
 
   # # NGINX
   # nginx:
