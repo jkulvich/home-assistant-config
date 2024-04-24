@@ -1,15 +1,5 @@
 services:
-  # Start Home Assistant with Docker.
-  # This config is alternative from command from https://www.home-assistant.io/installation/linux/#platform-installation:
-  # docker run -d \
-  #   --name homeassistant \
-  #   --privileged \
-  #   --restart=unless-stopped \
-  #   -e TZ=MY_TIME_ZONE \
-  #   -v /PATH_TO_YOUR_CONFIG:/config \
-  #   -v /run/dbus:/run/dbus:ro \
-  #   --network=host \
-  #   ghcr.io/home-assistant/home-assistant:stable
+  # Home Assistant config, see: https://www.home-assistant.io/installation/linux/#platform-installation
   homeassistant:
     image: ghcr.io/home-assistant/home-assistant:stable
     container_name: homeassistant
